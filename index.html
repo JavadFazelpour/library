@@ -11,15 +11,20 @@
       <div class="navbar">
         <h1>My Personal Library</h1>
       </div>
-      <form action="" method="post" class="add-book">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" />
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author" />
-        <label for="pages">Pages</label>
-        <input type="number" name="pages" id="pages" />
-        <input type="submit" value="+" />
-      </form>
+      <fieldset>
+        <legend>Add Book to Library</legend>
+        <form action="" method="post" class="add-book" id="form">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required />
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" />
+          <label for="pages">Pages</label>
+          <input type="number" name="pages" id="pages" />
+          <label for="read">Read Status</label>
+          <input type="checkbox" name="read" id="read" />
+          <input type="submit" value="+" />
+        </form>
+      </fieldset>
       <div class="books-info">
         <table class="table" id="table">
           <thead></thead>
