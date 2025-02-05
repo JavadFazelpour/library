@@ -80,6 +80,26 @@ function displayBooks(arr) {
   });
 }
 
+const formElem = document.getElementById("form");
+formElem.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(formElem);
+  const checkBox = document.getElementById("read");
+  let readStatus = "";
+  if (checkBox.checked) {
+    readStatus = "Read";
+  } else {
+    readStatus = "Not Read Yet";
+  }
+  addBookToLibrary(
+    formData.get("title"),
+    formData.get("author"),
+    formData.get("pages"),
+    readStatus
+  );
+  displayBooks(myLibrary);
+});
+
 // Test the code
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 320, "read");
 addBookToLibrary("1984", "George Orwell", 328, "not read");
